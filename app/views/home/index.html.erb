@@ -5,82 +5,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drop Squad Pickleball</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="bg-animation"></div>
+  <div class="scroll-indicator"></div>
+
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Drop Squad Pickleball</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Courts</a></li>
-      <li><a href="#">Events</a></li>
-      <li><a href="#">Membership</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="logo">Drop Squad Pickleball</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#app">App</a></li>
+        <li><a href="#map">Find Us</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- Hero Section with Image -->
-  <section class="hero">
-    <%= image_tag "drop-squad.png", alt: "Drop Squad Pickleball Club", class: "hero-image" %>
-    <div class="hero-overlay">
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="floating-elements">
+      <div class="floating-ball"></div>
+      <div class="floating-ball"></div>
+      <div class="floating-ball"></div>
+    </div>
+    
+    <div class="hero-content">
       <h1>Drop Squad Pickleball</h1>
-      <p>The trendy pickleball club in Brooklyn (East Williamsburg/Bushwick).</p>
-      <a href="#" class="cta-button">Book Now</a>
+      <p class="hero-subtitle">The trendy pickleball club in Brooklyn (East Williamsburg/Bushwick).</p>
+      <a href="#pricing" class="cta-button">
+        <i class="fas fa-play"></i>
+        Book Now
+      </a>
     </div>
   </section>
 
   <!-- Pricing Section -->
-  <section class="pricing">
+  <section class="pricing" id="pricing">
     <h2>Pricing</h2>
     <div class="pricing-cards">
       <div class="card">
         <h3>Basic</h3>
-        <p>$50/month</p>
+        <p>$50<span style="font-size: 1rem; color: #888;">/month</span></p>
         <p>Unlimited off-peak access</p>
       </div>
       <div class="card">
         <h3>Premium</h3>
-        <p>$150/month</p>
+        <p>$150<span style="font-size: 1rem; color: #888;">/month</span></p>
         <p>Full access + lessons</p>
       </div>
       <div class="card">
         <h3>Drop-In</h3>
-        <p>$40/session</p>
+        <p>$40<span style="font-size: 1rem; color: #888;">/session</span></p>
         <p>2 hours play</p>
       </div>
     </div>
   </section>
 
   <!-- Membership Section -->
-  <section class="membership">
+  <section class="membership" id="membership">
     <h2>Membership Options</h2>
     <div class="membership-plans">
       <div class="plan">
         <h3>Individual</h3>
         <p>Perfect for solo players</p>
-        <button class="cta-button">Sign Up</button>
+        <a href="#pricing" class="cta-button">
+          <i class="fas fa-user"></i>
+          Sign Up
+        </a>
       </div>
       <div class="plan">
         <h3>Group</h3>
         <p>For squads and teams</p>
-        <button class="cta-button">Sign Up</button>
+        <a href="#pricing" class="cta-button">
+          <i class="fas fa-users"></i>
+          Sign Up
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- App Store & Google Play Section -->
-  <section class="app-section">
+  <!-- App Download Section -->
+  <section class="app-section" id="app">
     <h2>Download Our App</h2>
     <div class="app-buttons">
-      <a href="https://www.apple.com/app-store/" class="app-store">App Store</a>
-      <a href="https://play.google.com/" class="google-play">Google Play</a>
+      <a href="https://www.apple.com/app-store/" class="app-store">
+        <i class="fab fa-apple"></i>
+        App Store
+      </a>
+      <a href="https://play.google.com/" class="google-play">
+        <i class="fab fa-google-play"></i>
+        Google Play
+      </a>
     </div>
   </section>
 
   <!-- Map Section -->
-  <section class="map-section">
+  <section class="map-section" id="map">
     <h2>Find Us</h2>
     <div class="map-placeholder">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.947!2d-73.934!3d40.704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a!2s555+Johnson+Ave%2C+Brooklyn%2C+NY+11206!5e0!3m2!1sen!2sus!4v162679!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -91,5 +117,7 @@
   <footer class="footer">
     <p>© 2025 Drop Squad Pickleball. All rights reserved.</p>
   </footer>
+
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
