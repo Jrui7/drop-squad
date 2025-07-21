@@ -1,5 +1,6 @@
+<!-- app/views/home/index.html.erb -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,88 +13,90 @@
   <nav class="navbar">
     <div class="logo">Drop Squad Pickleball</div>
     <ul class="nav-links">
-      <li><a href="#">Courts</a></li>
-      <li><a href="#">Events</a></li>
-      <li><a href="#">Membership</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#courts">Courts</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Drop Squad Pickleball</h1>
-      <p>Brooklyn's Premier Indoor Pickleball Club</p>
-      <a href="#booking" class="cta-button">Book a Court</a>
+      <h1>Welcome to Drop Squad</h1>
+      <p>We're a pickleball club and community gathering place for quality play for competitive and casual players alike. Our spacious, natural light-filled warehouse features high ceilings, professional indoor courts plus a dink court, as well as a full bar and lounge.</p>
+      <a href="#booking" class="cta-button">BOOK NOW</a>
       <div class="app-links">
-        <a href="https://apps.apple.com/" class="app-store">App Store</a>
-        <a href="https://play.google.com/" class="google-play">Google Play</a>
+        <a href="https://www.apple.com/app-store/" class="app-store"><img src="https://apple.com/favicon.ico" alt="App Store"></a>
+        <a href="https://play.google.com/" class="google-play"><img src="https://play.google.com/favicon.ico" alt="Google Play"></a>
       </div>
     </div>
-    <div class="hero-image">
-      <%= image_tag "drop-squad.png", alt: "Pickleball Courts" %>
+    <div class="hero-image" id="brxe-dyqbmo">
+      <%= image_tag "drop-squad.png", alt: "Pickleball Club Image" %>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2>About Drop Squad</h2>
-    <p>Located in the heart of East Williamsburg/Bushwick, Drop Squad is a state-of-the-art pickleball facility offering indoor courts, events, and memberships for all levels.</p>
-  </section>
-
-  <!-- Courts Section -->
-  <section class="courts" id="courts">
-    <h2>Our Courts</h2>
-    <div class="court-gallery">
-      <!-- Random pickleball court images from Unsplash -->
-      <img src="https://unsplash.com/photos/w-TcfHJgrjM/download?ixid=M3w2MzYxNjR8MHwxfHNlYXJjaHwxfHxwaWNrbGViYWxsJTIwY291cnR8ZW58MHx8fHwxNzIxNDk0MTg0fDA&force=true" alt="Indoor pickleball court with players">
-      <img src="https://unsplash.com/photos/nVTH0H5qW9w/download?ixid=M3w2MzYxNjR8MHwxfHNlYXJjaHwyfHxwaWNrbGViYWxsJTIwY291cnR8ZW58MHx8fHwxNzIxNDk0MTg0fDA&force=true" alt="Group on a pickleball court">
-    </div>
-    <p>4 premium indoor courts with professional surfaces.</p>
-  </section>
-
-  <!-- Events Section -->
-  <section class="events" id="events">
-    <h2>Events & Tournaments</h2>
-    <p>Join our leagues, clinics, and social events. Check the calendar for upcoming dates.</p>
-    <!-- Add JS for calendar or list -->
-  </section>
-
-  <!-- Membership Section -->
-  <section class="membership" id="membership">
-    <h2>Membership Options</h2>
-    <div class="membership-plans">
-      <div class="plan">
-        <h3>Basic</h3>
-        <p>$50/month - Unlimited access during off-peak hours.</p>
+  <!-- Pricing Section -->
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing-cards">
+      <div class="card">
+        <h3>DROP-IN</h3>
+        <p>starting at $40 for 2 hours</p>
+        <p>to test your skills</p>
+        <a href="#booking" class="book-button">Book</a>
       </div>
-      <div class="plan">
-        <h3>Premium</h3>
-        <p>$150/month - Full access, lessons, and events.</p>
+      <div class="card">
+        <h3>Leagues</h3>
+        <p>starting at $380 for 6 weeks</p>
+        <p>for the baddies</p>
+        <a href="#booking" class="book-button">Book</a>
+      </div>
+      <div class="card">
+        <h3>CLASSES</h3>
+        <p>starting at $40 for 60 mins</p>
+        <p>to level up</p>
+        <a href="#booking" class="book-button">Book</a>
+      </div>
+      <div class="card">
+        <h3>COURTS</h3>
+        <p>$110 per hour for non-members</p>
+        <p>for private court</p>
+        <a href="#booking" class="book-button">Book</a>
       </div>
     </div>
-    <a href="#booking" class="cta-button">Sign Up</a>
   </section>
 
-  <!-- Booking Section -->
-  <section class="booking" id="booking">
-    <h2>Book a Court</h2>
-    <form action="/book" method="post">
-      <input type="date" name="date" required>
-      <input type="time" name="time" required>
-      <select name="court">
-        <option>Court 1</option>
-        <option>Court 2</option>
-      </select>
-      <button type="submit">Book Now</button>
-    </form>
+  <!-- Amenities Section -->
+  <section class="amenities">
+    <div class="amenity">
+      <div class="amenity-image"></div> <!-- Empty rectangle -->
+      <h3>bar and lounge</h3>
+      <p>social space with drinks, sandwiches, and mezzanine</p>
+    </div>
+    <div class="amenity">
+      <div class="amenity-image"></div> <!-- Empty rectangle -->
+      <h3>beverages</h3>
+      <p>local brews, canned cocktails, coffee, and athletic drinks</p>
+    </div>
+    <div class="amenity">
+      <div class="amenity-image"></div> <!-- Empty rectangle -->
+      <h3>food</h3>
+      <p>grab-and-go options like sandwiches, chips, fruit, and charcuterie</p>
+    </div>
   </section>
 
-  <!-- Map Section -->
-  <section class="map" id="map">
-    <h2>Our Location</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.947!2d-73.934!3d40.704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a!2s555+Johnson+Ave%2C+Brooklyn%2C+NY+11206!5e0!3m2!1sfr!2sus!4v162679!5m2!1sfr!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <!-- Plan a Visit Section with Map -->
+  <section class="plan-visit" id="plan-visit">
+    <div class="encart">
+      <h2>Plan a Visit</h2>
+      <p>Come check out Drop Squad Pickleball at 555 Johnson Ave, Brooklyn.</p>
+      <a href="#contact" class="visit-button">Contact Us</a>
+    </div>
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.947!2d-73.934!3d40.704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a!2s555+Johnson+Ave%2C+Brooklyn%2C+NY+11206!5e0!3m2!1sen!2sus!4v162679!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
   </section>
 
   <!-- Footer -->
