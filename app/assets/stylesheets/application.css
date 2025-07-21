@@ -14,6 +14,7 @@
     --dark-light: #1a1a1a;
     --gray: #888;
     --light: #f8f9fa;
+    --white: #FFFFFF
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-green: linear-gradient(135deg, #00ff94 0%, #00cc75 100%);
     --gradient-whitegreen: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
@@ -22,8 +23,7 @@
   
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--light);
-    overflow-x: #FFF;
+    background: var(--white);
     line-height: 1.6;
   }
   
@@ -64,7 +64,12 @@
   .navbar.scrolled {
     background: rgba(10, 10, 10, 0.95);
     border-bottom: 1px solid rgba(0, 255, 148, 0.3);
-    color: var(--secondary)
+    color: var(--secondary);
+
+    .nav-links a {
+      color: var(--light);
+    }
+
   }
   
   .nav-container {
@@ -91,9 +96,9 @@
   }
   
   .nav-links a {
-    color: var(--primary);
+    color: var(--dark);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 800;
     transition: all 0.3s ease;
     position: relative;
   }
@@ -136,7 +141,7 @@
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    background-color: #FFF;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -145,13 +150,15 @@
   
   .hero-subtitle {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--gray);
     margin-bottom: 3rem;
+    text-shadow: 1px 1px 1px white;
+    letter-spacing: -.96px;
     animation: fadeInUp 1s ease-out 0.2s both;
   }
   
   #first-cta {
     background: #FFF;
+    box-shadow: 7px 10px 15px black;
   }
   .cta-button {
     display: inline-flex;
@@ -204,7 +211,7 @@
     height: 120px;
     background: #FFF;
     border-radius: 50%;
-    opacity: 0.7;
+    opacity: 0.8;
     animation: floatBall 12s infinite ease-in-out;
   }
   
