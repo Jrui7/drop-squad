@@ -9,21 +9,21 @@
   :root {
     --primary: #00ff94;
     --primary-dark: #00cc75;
-    --secondary: #ff6b6b;
+    --secondary: #fc4a1a;
     --dark: #0a0a0a;
     --dark-light: #1a1a1a;
     --gray: #888;
     --light: #f8f9fa;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-green: linear-gradient(135deg, #00ff94 0%, #00cc75 100%);
-    --gradient-purple: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --gradient-whitegreen: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    --gradient-orange: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
   }
   
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--dark);
-    color: white;
-    overflow-x: hidden;
+    background: var(--light);
+    overflow-x: #FFF;
     line-height: 1.6;
   }
   
@@ -54,7 +54,7 @@
     top: 0;
     width: 100%;
     padding: 1rem 2rem;
-    background: rgba(10, 10, 10, 0.8);
+    background: var(--light);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
@@ -64,6 +64,7 @@
   .navbar.scrolled {
     background: rgba(10, 10, 10, 0.95);
     border-bottom: 1px solid rgba(0, 255, 148, 0.3);
+    color: var(--secondary)
   }
   
   .nav-container {
@@ -90,7 +91,7 @@
   }
   
   .nav-links a {
-    color: white;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -120,7 +121,9 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+    background: var(--gradient-green);
+    width: 100vw;
+    min-width: 100%;
   }
   
   .hero-content {
@@ -147,6 +150,9 @@
     animation: fadeInUp 1s ease-out 0.2s both;
   }
   
+  #first-cta {
+    background: #FFF;
+  }
   .cta-button {
     display: inline-flex;
     align-items: center;
@@ -194,21 +200,21 @@
   
   .floating-ball {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background: var(--gradient-green);
+    width: 120px;
+    height: 120px;
+    background: #FFF;
     border-radius: 50%;
-    opacity: 0.6;
-    animation: floatBall 15s infinite ease-in-out;
+    opacity: 0.7;
+    animation: floatBall 12s infinite ease-in-out;
   }
   
   .floating-ball:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-  .floating-ball:nth-child(2) { top: 60%; right: 15%; animation-delay: 5s; }
-  .floating-ball:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 10s; }
+  .floating-ball:nth-child(2) { top: 60%; right: 15%; animation-delay: 1s; }
+  .floating-ball:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 1,5s; }
   
   @keyframes floatBall {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-30px) scale(1.1); }
+    50% { transform: translateY(-80px) scale(1); }
+    50% { transform: translateY(-80px) scale(1); }
   }
   
   /* Section Styles */
