@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get "home/index"
   root 'home#index'
+  post '/submit-interest', to: 'home#submit_interest'  # Ajoute ça
 end

@@ -1,17 +1,7 @@
-// app/assets/javascripts/application.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Drop Squad Pickleball is ready!');
-    
-    // Exemple de JS simple pour un futur effet, comme un smooth scroll si besoin
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
+    // Exemple : Tracker les clics sur CTA
+    document.querySelector('.cta-button').addEventListener('click', () => {
+      console.log('CTA clicked - Track in GA');
+      gtag('event', 'click', { 'event_category': 'engagement', 'event_label': 'Book CTA' });
     });
   });
