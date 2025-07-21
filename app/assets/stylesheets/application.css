@@ -1,20 +1,234 @@
-/* Ajoute ça à la fin de application.css */
-body {
-    background-color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+/* app/assets/stylesheets/application.css */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  .header {
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
     background-color: #000;
     color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 2em;
-    letter-spacing: 2px;
+    padding: 15px 20px;
   }
-  .section {
-    padding: 40px;
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
     text-align: center;
+    color: #fff;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .btn-book {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .btn-book:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Pricing Section */
+  .pricing {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pricing-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* App Download Section */
+  .app-download {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f0f0f0;
+  }
+  
+  .app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .app-buttons img {
+    width: 150px;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Events Section */
+  .events {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .map-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .updates-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .updates-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .updates-form button {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .updates-form button:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .pricing-grid, .features-grid {
+      flex-direction: column;
+    }
+  
+    .hero-content {
+      padding: 10px;
+      font-size: 0.8em;
+    }
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
