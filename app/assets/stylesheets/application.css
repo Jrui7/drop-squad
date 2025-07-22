@@ -158,43 +158,20 @@
   
   #first-cta {
     background: #FFF;
-    box-shadow: 7px 10px 15px black;
   }
   .cta-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 7px 10px 15px black;
     padding: 1rem 2.5rem;
     background: var(--gradient-green);
     color: var(--dark);
     text-decoration: none;
     font-weight: 700;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 255, 148, 0.3);
     animation: fadeInUp 1s ease-out 0.4s both;
     position: relative;
     overflow: hidden;
-  }
-  
-  .cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  .cta-button:hover::before {
-    left: 100%;
-  }
-  
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 255, 148, 0.4);
   }
   
   /* Floating Elements */
@@ -257,7 +234,7 @@
   position: relative;
   overflow: hidden;
   min-width: 0;
-  border: none; /* No initial border, handled by JS */
+  border-top: 5px solid var(--secondary);
 }
 
 .card h3 {
@@ -284,13 +261,12 @@
   align-items: center;
   gap: 10px;
   padding: 1rem 2.5rem;
-  background: #fff;
+  background: var(--light);
   color: var(--dark);
   text-decoration: none;
   font-weight: 700;
-  border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 255, 148, 0.3);
+  box-shadow: 3px 3px 3px var(--secondary);
   animation: fadeInUp 1s ease-out 0.4s both;
   position: relative;
   overflow: hidden;
@@ -299,31 +275,7 @@
 
 .card .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0, 255, 148, 0.4);
-}
-
-.card .cta-button::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: -10%;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle at 30% 30%, #fc4a1a 0%, #fc4a1a 20%, transparent 20%);
-  opacity: 0.7;
-  animation: splashMove 3s infinite ease-in-out;
-}
-
-.card .cta-button::after {
-  content: '';
-  position: absolute;
-  bottom: -15%;
-  right: -5%;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 70% 70%, #fc4a1a 0%, #fc4a1a 20%, transparent 20%);
-  opacity: 0.7;
-  animation: splashMove 4s infinite ease-in-out reverse;
+  box-shadow: 3px 3px 3px rgba(0, 255, 148, 0.4);
 }
 
 @keyframes splashMove {
