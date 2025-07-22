@@ -55,26 +55,86 @@ document.addEventListener('DOMContentLoaded', function() {
       observer.observe(section);
     });
   
-    // Card hover effects with tilt
-    document.querySelectorAll('.card, .plan').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelector('.nav-links');
+      const burger = document.createElement('div');
+      burger.className = 'burger';
+      burger.innerHTML = '☰';
+      document.querySelector('.navbar').insertBefore(burger, navLinks);
+    
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
       });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    
+      const cards = document.querySelectorAll('.card');
+    
+      cards.forEach(card => {
+        let animationFrame = null;
+        let progress = 0;
+    
+        function animateBorder() {
+          if (!card.matches(':hover')) {
+            if (progress > 0) {
+              progress -= 0.01; // Smooth exit
+              if (progress <= 0) {
+                progress = 0;
+                cancelAnimationFrame(animationFrame);
+                card.style.borderTop = '3px solid';
+                card.style.borderImage = 'linear-gradient(135deg, #00ff94 0%, #00cc75 100%) 1';
+                card.style.borderLeft = '0';
+                card.style.borderRight = '0';
+                card.style.borderBottom = '0';
+                return;
+              }
+            } else {
+              return;
+            }
+          } else if (progress < 1) {
+            progress += 0.01; // Smooth entry over 3 seconds (100 frames approx)
+          }
+    
+          const green = `linear-gradient(135deg, #00ff94 0%, #00cc75 100%)`;
+          const orange = `linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%)`;
+    
+          if (progress <= 0.2) {
+            card.style.borderTop = `3px solid`;
+            card.style.borderImage = green;
+            card.style.borderLeft = '0';
+            card.style.borderRight = '0';
+            card.style.borderBottom = '0';
+          } else if (progress <= 0.5) {
+            const t = (progress - 0.2) / 0.3;
+            card.style.borderTop = `3px solid`;
+            card.style.borderImage = `linear-gradient(${t * 100}deg, ${green}, ${orange})`;
+            card.style.borderLeft = `${3 * t}px solid`;
+            card.style.borderRight = `${3 * t}px solid`;
+            card.style.borderBottom = '0';
+          } else if (progress <= 0.8) {
+            const t = (progress - 0.5) / 0.3;
+            card.style.borderTop = '0';
+            card.style.borderImage = orange;
+            card.style.borderLeft = `${3 - 2 * t}px solid`;
+            card.style.borderRight = `${3 - 2 * t}px solid`;
+            card.style.borderBottom = `${3 * t}px solid`;
+          } else {
+            card.style.borderTop = '0';
+            card.style.borderImage = orange;
+            card.style.borderLeft = '0';
+            card.style.borderRight = '0';
+            card.style.borderBottom = '3px solid';
+          }
+    
+          animationFrame = requestAnimationFrame(animateBorder);
+        }
+    
+        card.addEventListener('mouseenter', () => {
+          if (!animationFrame) animationFrame = requestAnimationFrame(animateBorder);
+        });
+    
+        card.addEventListener('mouseleave', () => {
+          if (animationFrame) animateBorder(); // Start exit animation
+        });
       });
-    });
   
     // Parallax effect for floating elements
     window.addEventListener('scroll', () => {

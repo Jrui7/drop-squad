@@ -13,8 +13,8 @@
     --dark: #0a0a0a;
     --dark-light: #1a1a1a;
     --gray: #888;
-    --light: #f8f9fa;
-    --white: #FFFFFF
+    --light:#F6F9FC;
+    --white: #FFFFFF;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-green: linear-gradient(135deg, #00ff94 0%, #00cc75 100%);
     --gradient-whitegreen: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
@@ -23,7 +23,7 @@
   
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--white);
+    background: var(--light);
     line-height: 1.6;
   }
   
@@ -236,71 +236,119 @@
     font-weight: 800;
     text-align: center;
     margin-bottom: 4rem;
-    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-dark)
   }
   
-  /* Pricing Cards */
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background: #fff; /* White background */
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  border: none; /* No initial border, handled by JS */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.card p:first-of-type {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.card p:last-of-type {
+  color: var(--gray);
+  font-size: 1.1rem;
+}
+
+/* CTA Button inside Card */
+.card .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 255, 148, 0.3);
+  animation: fadeInUp 1s ease-out 0.4s both;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.card .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 255, 148, 0.4);
+}
+
+.card .cta-button::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 30% 30%, #fc4a1a 0%, #fc4a1a 20%, transparent 20%);
+  opacity: 0.7;
+  animation: splashMove 3s infinite ease-in-out;
+}
+
+.card .cta-button::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: -5%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 70% 70%, #fc4a1a 0%, #fc4a1a 20%, transparent 20%);
+  opacity: 0.7;
+  animation: splashMove 4s infinite ease-in-out reverse;
+}
+
+@keyframes splashMove {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -10px); }
+}
+
+/* Responsive Fallback */
+@media (max-width: 1300px) {
   .pricing-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 3rem 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+}
+
+/* Animation for fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-green);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .card:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 255, 148, 0.1);
-  }
-  
-  .card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
-  }
-  
-  .card p:first-of-type {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 1rem;
-  }
-  
-  .card p:last-of-type {
-    color: var(--gray);
-    font-size: 1.1rem;
-  }
+}
   
   /* Membership Plans */
   .membership-plans {
@@ -418,9 +466,6 @@
       padding: 4rem 1rem;
     }
     
-    .pricing-cards {
-      grid-template-columns: 1fr;
-    }
     
     .membership-plans {
       grid-template-columns: 1fr;
