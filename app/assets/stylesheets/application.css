@@ -9,17 +9,16 @@
   }
   
   :root {
-    --primary: #00cc75;
-    --primary-dark: #01b567;
-    --secondary: #E70000;
+    --primary: #16473e;
+    --primary-light: #105E46;
+    --secondary: #FF4D00;
     --dark: #0a0a0a;
     --dark-light: #1a1a1a;
     --gray: #888;
     --light:#F6F9FC;
     --white: #FFFFFF;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-green: linear-gradient(135deg, #00cc75 0%, #01b567 100%);
-    --gradient-whitegreen: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    --gradient-green: linear-gradient(135deg, var(--primary) 0%, #14775a 100%);
     --gradient-orange: linear-gradient(135deg, var(--secondary) 0%, #f7b733 100%);
   }
   
@@ -157,9 +156,10 @@
   
   .hero-subtitle {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color:#0a0a0a;
+    color:#FFF;
+    font-weight: 700;
     margin-bottom: 3rem;
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px var(--secondary);
     letter-spacing: -.96px;
     animation: fadeInUp 1s ease-out 0.2s both;
   }
@@ -243,7 +243,7 @@
   position: relative;
   overflow: hidden;
   min-width: 0;
-  border-top: 5px solid var(--secondary);
+  border-top: 8px solid var(--primary-light);
 }
 
 .card h3 {
@@ -255,7 +255,7 @@
 .card p:first-of-type {
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 1rem;
 }
 
@@ -275,7 +275,7 @@
   text-decoration: none;
   font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 3px 3px 3px var(--secondary);
+  box-shadow: 3px 3px 3px var(--primary);
   animation: fadeInUp 1s ease-out 0.4s both;
   position: relative;
   overflow: hidden;
@@ -284,7 +284,7 @@
 
 .card .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 3px 3px 3px var(--primary);
+  box-shadow: 3px 3px 3px var(--secondary);
 }
 
 @keyframes splashMove {
@@ -344,12 +344,17 @@
     color: var(--gray);
     margin-bottom: 2rem;
   }
+
+  .plan a {
+    color: #FFF;
+  }
   
   /* App Section */
   .app-section {
     background: linear-gradient(135deg, var(--dark-light) 0%, var(--dark) 100%);
-    border-radius: 30px;
     text-align: center;
+    margin-bottom: 50px;
+    color: #FFF;
   }
   
   .app-buttons {
@@ -432,7 +437,7 @@
   }
   
   .text-style-link.white {
-    color: black;
+    color: #FFF;
     font-size: 1.1rem;
     display: block;
   }
