@@ -9,15 +9,16 @@
   }
   
   :root {
-    --primary: #16473e;
-    --primary-light: #105E46;
-    --secondary: #FF4D00;
+    --primary: #156064;
+    --primary-light: #00C49A;
+    --secondary: #FB8F67;
+    --secondary-light: #FFC2B4;
     --dark: #0a0a0a;
     --dark-light: #1a1a1a;
-    --gray: #888;
+    --gray: #8e9599;
     --light:#F6F9FC;
     --white: #FFFFFF;
-    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient: linear-gradient(135deg, rgba(0, 255, 148, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
     --gradient-green: linear-gradient(135deg, var(--primary) 0%, #14775a 100%);
     --gradient-orange: linear-gradient(135deg, var(--secondary) 0%, #f7b733 100%);
   }
@@ -72,6 +73,10 @@
     border-bottom: 1px solid rgba(0, 255, 148, 0.3);
     color: var(--secondary);
 
+    .logo {
+      color: var(--secondary);
+    }
+
     .nav-links a {
       color: var(--light);
     }
@@ -91,10 +96,7 @@
     font-family: 'Bungee', sans-serif !important;
     text-transform: uppercase;
     font-weight: 800;
-    background: var(--gradient-green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
   }
   
   .nav-links {
@@ -119,7 +121,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary);
+    background: var(--primary-light);
     transition: width 0.3s ease;
   }
   
@@ -187,6 +189,11 @@
 #first-cta {
   background: #FFF;
   text-transform: uppercase;
+}
+
+#first-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 3px var(--secondary);
 }
 
 .cta-button {
@@ -278,7 +285,7 @@
 }
 
 .card {
-  background: #fff; /* White background */
+  background: var(--gradient);
   padding: 2rem 1.5rem;
   text-align: center;
   position: relative;
