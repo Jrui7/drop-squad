@@ -12,7 +12,8 @@ Rails.application.configure do
   # Enable live asset compilation
   config.assets.debug = true
   config.assets.digest = false
-  config.assets.quiet = true
+  config.assets.quiet = false
+  config.assets.compile = true
 
   # Use evented file watcher for better change detection
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
