@@ -9,8 +9,8 @@
   }
   
   :root {
-    --primary: #156064;
-    --primary-light: #00C49A;
+    --primary: #268161;
+    --primary-light: #bfdb99;
     --secondary: #FB8F67;
     --secondary-light: #FFC2B4;
     --dark: #0a0a0a;
@@ -19,8 +19,7 @@
     --light:#F6F9FC;
     --white: #FFFFFF;
     --gradient: linear-gradient(135deg, rgba(0, 255, 148, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
-    --gradient-green: linear-gradient(135deg, var(--primary) 0%, #14775a 100%);
-    --gradient-orange: linear-gradient(135deg, var(--secondary) 0%, #f7b733 100%);
+    --gradient-green: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   }
   
   body {
@@ -61,25 +60,19 @@
     top: 0;
     width: 100%;
     padding: 1rem 2rem;
-    background: var(--light);
+    background: var(--dark);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
   }
   
   .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.95);
-    border-bottom: 1px solid rgba(0, 255, 148, 0.3);
     color: var(--secondary);
 
     .logo {
       color: var(--secondary);
     }
 
-    .nav-links a {
-      color: var(--light);
-    }
 
   }
   
@@ -96,7 +89,7 @@
     font-family: 'Bungee', sans-serif !important;
     text-transform: uppercase;
     font-weight: 800;
-    color: var(--primary);
+    color: var(--primary-light);
   }
   
   .nav-links {
@@ -107,7 +100,7 @@
   }
   
   .nav-links a {
-    color: var(--dark);
+    color: var(--white);
     text-decoration: none;
     font-weight: 800;
     transition: all 0.3s ease;
@@ -121,7 +114,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-light);
+    background: var(--secondary);
     transition: width 0.3s ease;
   }
   
@@ -137,7 +130,8 @@
   justify-content: center; /* Horizontally center the content */
   text-align: center;
   position: relative;
-  background: linear-gradient(to right, var(--primary) 60%, var(--primary-light)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: url('drop-squad-courts.png') no-repeat center center;
+  background-size: cover;
   width: 100vw;
   min-width: 100%;
   overflow: hidden; /* Prevent content overflow */
@@ -152,15 +146,6 @@
   align-items: center; /* Center all children vertically and horizontally */
 }
 
-.logo-image {
-  display: block;
-  margin: 0 auto 1rem auto; /* Center horizontally, reduced space below */
-  max-width: 400px; /* Base size for desktop */
-  object-fit: contain; /* Preserve visible area */
-  position: relative;
-  z-index: 3;
-  clip-path: inset(0 0 5% 0); /* Adjust based on SVG padding */
-}
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) { /* Tablet breakpoint */
@@ -169,20 +154,14 @@
   }
 }
 
-@media (max-width: 768px) { /* Mobile breakpoint */
-  .logo-image {
-    max-width: 250px; /* Further reduce for mobile */
-  }
-}
 
 
 .hero-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
   color: #FFF;
-  font-weight: 700;
-  margin-bottom: 3rem;
+  /* font-weight: 800; */
+  font-size: 60px;
+  margin-bottom: 5rem;
   text-shadow: 1px 1px 1px var(--secondary);
-  letter-spacing: -0.96px;
   animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -243,7 +222,7 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background: #FFF;
+    background: var(--gradient-green);
     border-radius: 50%;
     opacity: 0.8;
     animation: floatBall 12s infinite ease-in-out;
@@ -292,7 +271,7 @@
   position: relative;
   overflow: hidden;
   min-width: 0;
-  border-top: 8px solid var(--primary-light);
+  border-top: 8px solid  var(--primary);
 }
 
 .card h3 {
@@ -527,11 +506,10 @@
   }
   /* Footer */
   .footer {
-    background: var(--dark-light);
+    background: var(--gradient-green);
     text-align: center;
     padding: 3rem 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--gray);
+    color: var(--light);
   }
   
   /* Animations */
