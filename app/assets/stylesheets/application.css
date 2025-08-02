@@ -158,36 +158,36 @@
 
 .hero-subtitle {
   color: #FFF;
-  /* font-weight: 800; */
   font-size: 60px;
-  margin-bottom: 5rem;
   text-shadow: 1px 1px 1px var(--secondary);
   animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-#first-cta {
-  background: #FFF;
-  text-transform: uppercase;
-}
 
-#first-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 3px 3px 3px var(--secondary);
-}
+
 
 .cta-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 7px 10px 15px black;
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 3px var(--dark);
+  text-transform: uppercase;
   padding: 1rem 2.5rem;
-  background: var(--gradient-green);
+  background: var(--light);
   color: var(--dark);
   text-decoration: none;
   font-weight: 700;
+  transition: all 0.3s ease;
   animation: fadeInUp 1s ease-out 0.4s both;
   position: relative;
   overflow: hidden;
+  margin-top: 1.5rem;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 3px 3px 3px var(--secondary);
+  }
+
 }
 
 /* Ensure text stays above the image */
@@ -292,28 +292,6 @@
   font-size: 1.1rem;
 }
 
-/* CTA Button inside Card */
-.card .cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 1rem 2.5rem;
-  background: var(--light);
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow: 3px 3px 3px var(--primary);
-  animation: fadeInUp 1s ease-out 0.4s both;
-  position: relative;
-  overflow: hidden;
-  margin-top: 1.5rem;
-}
-
-.card .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 3px 3px 3px var(--secondary);
-}
 
 @keyframes splashMove {
   0%, 100% { transform: translate(0, 0); }
@@ -354,6 +332,11 @@
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    .cta-button {
+      background: var(--primary);
+      color: var(--light);
+    }
+
   }
   
   .plan:hover {
@@ -373,9 +356,7 @@
     margin-bottom: 2rem;
   }
 
-  .plan a {
-    color: #FFF;
-  }
+
   
   /* App Section */
   .app-section {
