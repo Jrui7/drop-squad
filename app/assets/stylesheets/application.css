@@ -60,7 +60,6 @@
     top: 0;
     width: 100%;
     padding: 1rem 2rem;
-    background: var(--dark);
     backdrop-filter: blur(20px);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -128,7 +127,7 @@
   justify-content: center; /* Horizontally center the content */
   text-align: center;
   position: relative;
-  background: url('drop-squad-courts.png') no-repeat center center;
+  background: url('drop-squad-c.jpg') no-repeat center center;
   background-size: cover;
   width: 100vw;
   min-width: 100%;
@@ -141,7 +140,12 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all children vertically and horizontally */
+  align-items: center; 
+  p {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
 }
 
 
@@ -157,8 +161,9 @@
 .hero-subtitle {
   color: #FFF;
   font-size: 60px;
-  text-shadow: 1px 1px 1px var(--secondary);
+  text-shadow: 3px 1px 1px var(--dark);
   animation: fadeInUp 1s ease-out 0.2s both;
+
 }
 
 
@@ -168,10 +173,11 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
   transform: translateY(-3px);
   box-shadow: 3px 3px 3px var(--dark);
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 0.7rem 2rem;
   background: var(--light);
   color: var(--dark);
   text-decoration: none;
@@ -181,6 +187,9 @@
   position: relative;
   overflow: hidden;
   margin-top: 1.5rem;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
   &:hover {
     transform: translateY(-3px);
     box-shadow: 3px 3px 3px var(--secondary);
@@ -222,7 +231,7 @@
     width: 120px; /* Peut être ajusté en unités relatives si besoin */
     height: 120px;
     border-radius: 50%;
-    animation: floatBall 12s infinite ease-in-out;
+    animation: floatBall 6s infinite ease-in-out;
   }
   
   .floating-ball:nth-child(1) {
@@ -248,7 +257,7 @@
       transform: translateY(0) scale(1);
     }
     50% {
-      transform: translateY(-8vmin) scale(1); /* Remplace 80px par 8vmin */
+      transform: translateY(-8vmin) scale(1);
     }
     100% {
       transform: translateY(0) scale(1);
@@ -258,7 +267,7 @@
   /* Media query pour ajuster la taille des balles sur petits écrans */
   @media (max-width: 768px) {
     .floating-ball {
-      width: 80px; /* Réduit la taille sur mobile */
+      width: 80px;
       height: 80px;
     }
   }
@@ -276,6 +285,99 @@
     margin-bottom: 4rem;
     color: var(--primary-dark)
   }
+
+  /* CSS for the 'our-why' section */
+.our-why-section {
+  background-color: #607190;
+  padding: 40px 0;
+  padding: 3rem 3rem;
+  margin: 0 auto;
+  width: 100vw;
+  min-width: 100%;
+
+.why-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  color: var(--light);
+}
+
+.why-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.left-content {
+  flex: 1; /* 50% space */
+  max-width: 40%;
+  padding-right: 3rem;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+
+.right-images {
+  flex: 1; /* 50% space */
+  max-width: 60%;
+  position: relative;
+  height: 50vh; 
+}
+
+.top-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%; /* Smaller top image */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.bottom-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%; /* Larger bottom image */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .left-content,
+  .right-images {
+    max-width: 100%;
+  }
+  
+  .right-images {
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .top-image,
+  .bottom-image {
+    position: static;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+}
+
   
 /* Pricing Cards */
 
