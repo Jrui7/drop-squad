@@ -1,105 +1,95 @@
-<!-- app/views/home/index.html.erb -->
+# index.html.erb
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drop Squad Pickleball</title>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="bg-animation"></div>
   <div class="scroll-indicator"></div>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <img src="<%= image_path('drop-squad-logo.png') %>" alt="Drop Squad Pickleball Logo" class="logo">
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#pricing">Play</a></li>
+        <li><a href="#play">Play</a></li>
         <li><a href="#membership">Membership</a></li>
         <li><a href="#app">App</a></li>
-        <li><a href="#map">Find Us</a></li>
+        <li><a href="#find-us">Find Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>More than fun pickleball</h1>
+      <div class="hero-subtitle">Turning solo wins into collective joy</div>
+      <a href="#play" class="cta-button" id="first-cta">PLAY WITH US</a>
+    </div>
     <div class="floating-elements">
       <img src="<%= image_path('ball.png') %>" alt="Drop Squad Pickleball ball" class="floating-ball">
       <img src="<%= image_path('ball.png') %>" alt="Drop Squad Pickleball ball" class="floating-ball">
       <img src="<%= image_path('ball.png') %>" alt="Drop Squad Pickleball ball" class="floating-ball">
     </div>
-    
-    <div class="hero-content">
-      <h1 class="hero-subtitle">More than fun pickleball</h1>
-      <p>Turning solo wins into collective joy</p>
-      <a href="#pricing" class="cta-button" id="first-cta">
-        PLAY WITH US
-      </a>
+  </section>
+
+  <section class="our-why-section" id="our-why">
+    <div class="why-container">
+      <div class="why-content-wrapper">
+        <div class="left-content">
+          <h2 class="title">Our Why</h2>
+          <p class="description">We adore pickleball for its heart-pounding thrills—like ripping a blistering drive down the line, curving an audacious ATP, or earning cheers from your opponent on a crafty shot. Add the magic of a delicate drop shot that grazes the net and drops softly into their kitchen, it was obviously not luck. This game is addictive. But these triumphs soar higher when shared—with high-fives, laughs and bonds forged in every rally. Achievements truly shine in community, turning solo wins into collective joy. Join Drop Squad Pickleball, play, enjoy, connect.</p>
+          <a href="#membership" class="cta-button">Join the squad</a>
+        </div>
+        <div class="right-images">
+          <img src="<%= image_path('drop-squad-party.png') %>" class="top-image" alt="drop-squad-party-image">
+          <img src="<%= image_path('drop-squad-courts.png') %>" class="bottom-image" alt="drop-squad-courts-image">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="our-why" class="our-why-section">
-  <div class="why-container">
-    <div class="why-content-wrapper">
-      <!-- Left side: Title, text, CTA -->
-      <div class="left-content">
-        <h1 class="title">Our Why</h1>
-        <p class="description">
-        We adore pickleball for its heart-pounding thrills—like ripping a blistering drive down the line, curving an audacious ATP, or earning cheers from your opponent on a crafty shot. Add the magic of a delicate drop shot that grazes the net and drops softly into their kitchen, it was obviously not luck. This game is addictive. But these triumphs soar higher when shared—with high-fives, laughs and bonds forged in every rally. Achievements truly shine in community, turning solo wins into collective joy. Join Drop Squad Pickleball, play, enjoy, connect.
-        </p>
-        <a href="#pricing" class="cta-button">
-        Join the squad
-        </a>        
-      </div>
-      
-      <!-- Right side: Two images positioned similarly to the example -->
-      <div class="right-images">
-        <img src="<%= image_path('drop-squad-party.png') %>" class="top-image" alt="drop-squad-party-image">
-        <img src="<%= image_path('drop-squad-courts.png') %>" class="bottom-image" alt="drop-squad-courts-image">
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
+  <section id="play">
     <h2>Multiple ways to have fun</h2>
     <div class="pricing-cards">
       <div class="card">
         <h3>The Playground</h3>
         <p>Starting at $10/hour</p>
         <p>Join solo or rally with squad for amazing practice and social vibes</p>
-        <a href="#" class="cta-button">Play<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="#" class="cta-button">Play</a>
       </div>
       <div class="card">
         <h3>The League</h3>
         <p>Starting at $150/4 weeks</p>
         <p>4 weeks of competition to showcase skill, style and elevate each other</p>
-        <a href="#" class="cta-button">Compete<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="#" class="cta-button">Compete</a>
       </div>
       <div class="card">
         <h3>Level-up</h3>
         <p>Starting at $40/hour</p>
         <p>Focus on technique to turn beginners into champs, pros into legends.</p>
-        <a href="#" class="cta-button">Learn<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="#" class="cta-button">Learn</a>
       </div>
       <div class="card">
         <h3>Private squad</h3>
         <p>Starting at $72/hour</p>
         <p>Bring your squad, have fun, show off your skills--- or settle scores!</p>
-        <a href="#" class="cta-button">Book<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="#" class="cta-button">Book</a>
       </div>
     </div>
   </section>
-
   <section class="map-section" id="map">
-  <div class="map-container">
+    <div class="map-container">
     <div class="map-info">
       <div class="contact-subsection">
         <div class="contact-item">
@@ -144,53 +134,38 @@
     <div class="map-embed">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.947!2d-73.934!3d40.704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a!2s555+Johnson+Ave%2C+Brooklyn%2C+NY+11206!5e0!3m2!1sen!2sus!4v162679!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-  </div>
-</section>
-
-  <!-- Membership Section -->
-  <section class="membership" id="membership">
+    </div>
+  </section>
+  <section id="membership" class="membership-plans-section">
     <h2>Membership Options</h2>
     <div class="membership-plans">
       <div class="plan">
         <h3>Individual</h3>
         <p>Perfect for solo players</p>
-        <a href="#pricing" class="cta-button">
-          <i class="fas fa-user"></i>
-          Join
-        </a>
+        <a href="#" class="cta-button">Discover</a>
       </div>
       <div class="plan">
         <h3>Group</h3>
         <p>Ideal for squads of 4 or more</p>
-        <a href="#pricing" class="cta-button">
-          <i class="fas fa-users"></i>
-          Join
-        </a>
+        <a href="#" class="cta-button">Discover</a>
       </div>
     </div>
   </section>
 
-  <!-- App Download Section -->
-  <section class="app-section" id="app">
+  <section id="app" class="app-section">
     <h2>Download Our Booking App</h2>
     <div class="app-buttons">
-      <a href="https://www.apple.com/app-store/" class="app-store">
-        <i class="fab fa-apple"></i>
-        App Store
+      <a href="#" class="app-store">
+        <i class="fab fa-apple"></i> App Store
       </a>
-      <a href="https://play.google.com/" class="google-play">
-        <i class="fab fa-google-play"></i>
-        Google Play
+      <a href="#" class="google-play">
+        <i class="fab fa-google-play"></i> Google Play
       </a>
     </div>
   </section>
 
-
-  <!-- Footer -->
   <footer class="footer">
     <p>© 2025 Drop Squad Pickleball. All rights reserved.</p>
   </footer>
-
-  <%= javascript_include_tag 'application' %>
 </body>
 </html>

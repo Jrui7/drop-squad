@@ -1,3 +1,5 @@
+// application.js
+
 document.addEventListener('DOMContentLoaded', () => {
   // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -15,13 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Navbar scroll effect
   const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+  const ourWhySection = document.querySelector('#our-why');
+  const updateNavbar = () => {
+    const ourWhyBottom = ourWhySection.offsetTop + ourWhySection.offsetHeight;
+    if (window.scrollY > ourWhyBottom) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
-  });
+  };
+  window.addEventListener('scroll', updateNavbar);
 
   // Scroll progress indicator
   window.addEventListener('scroll', () => {
@@ -54,21 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Add loading animations
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-  });
-
-  // Add cursor trail effect variables
-  let mouseX = 0, mouseY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-
-
   // Add viewport animations
   const animateOnScroll = () => {
     const elements = document.querySelectorAll('.card, .plan');
@@ -84,54 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', animateOnScroll);
   animateOnScroll(); // Run on load
 
-  // Enhanced hover effects for app buttons
-  document.querySelectorAll('.app-store, .google-play').forEach(button => {
-    button.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-3px) scale(1.05)';
+  // Menu toggle for mobile
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
-
-    button.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0) scale(1)';
-    });
-  });
-
-  
+  }
 
   // Performance optimization: throttle scroll events
   let ticking = false;
 
-  function updateScrollEffects() {
-    if (window.scrollY > 100) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-
-    const scrollTop = document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scrollTop / scrollHeight) * 100;
-    const indicator = document.querySelector('.scroll-indicator');
-    if (indicator) {
-      indicator.style.width = scrolled + '%';
-    }
-
-    const scrolledAmount = window.pageYOffset;
-    const bgAnimation = document.querySelector('.bg-animation');
-    if (bgAnimation) {
-      bgAnimation.style.transform = `translateY(${scrolledAmount * -0.5}px)`;
-    }
-
-    document.querySelectorAll('.floating-ball').forEach((ball, index) => {
-      const speed = 0.5 + (index * 0.2);
-      ball.style.transform = `translateY(${scrolledAmount * speed}px)`;
-    });
-
-    ticking = false;
-  }
-
   function requestScrollUpdate() {
     if (!ticking) {
-      requestAnimationFrame(updateScrollEffects);
+      requestAnimationFrame(() => {
+        updateNavbar();
+        // Add other scroll effects if needed
+        ticking = false;
+      });
       ticking = true;
     }
   }
