@@ -287,96 +287,99 @@
   }
 
   /* CSS for the 'our-why' section */
-.our-why-section {
-  background-color: #607190;
-  padding: 40px 0;
-  padding: 3rem 3rem;
-  margin: 0 auto;
-  width: 100vw;
-  min-width: 100%;
-
-.why-container {
-  margin: 0 auto;
-  padding: 0 20px;
-  color: var(--light);
-}
-
-.why-content-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.left-content {
-  flex: 1; /* 50% space */
-  max-width: 40%;
-  padding-right: 3rem;
-}
-
-.title {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.description {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  text-align: justify;
-}
-
-
-.right-images {
-  flex: 1; /* 50% space */
-  max-width: 60%;
-  position: relative;
-  height: 50vh; 
-}
-
-.top-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%; /* Smaller top image */
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.bottom-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60%; /* Larger bottom image */
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
+  .our-why-section {
+    background-color: #607190;
+    padding: 3rem 3rem;
+    margin: 0 auto;
+    width: 100vw;
+    min-width: 100%;
   }
   
-  .left-content,
-  .right-images {
-    max-width: 100%;
+  .why-container {
+    margin: 0 auto;
+    padding: 0 20px;
+    color: var(--light);
   }
   
-  .right-images {
-    height: auto;
-    margin-top: 20px;
+  .why-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
   }
   
-  .top-image,
-  .bottom-image {
-    position: static;
-    width: 100%;
+  .left-content {
+    flex: 1; /* 50% space */
+    max-width: 40%;
+    padding-right: 3rem;
+  }
+  
+  .title {
+    font-size: 2.5em;
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
-}
-}
+  
+  .description {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  
+  .right-images {
+    flex: 1; /* 50% space */
+    max-width: 60%;
+    position: relative;
+    height: 50vh; /* Adjusted to auto to respect content height */
+  }
+  
+  .bottom-image {
+    position: absolute;
+    bottom: 0; /* Aligns the bottom with the "Join the Squad" button */
+    left: 0; /* Bottom left position */
+    width: 70%; /* 70% of the right-images container width */
+    height: auto; /* Natural height based on width */
+    border-radius: 8px;
+    object-fit: cover; /* Ensure it covers the area */
+    z-index: 1; /* Base layer */
+  }
+  
+  .top-image {
+    position: absolute;
+    top: 0; /* Starts at the top, aligned with "OUR WHY" */
+    right: 0; /* Top right position */
+    width: 40%; /* 40% of the right-images container width */
+    height: auto; /* Natural height based on width */
+    border-radius: 8px;
+    object-fit: cover; /* Ensure it fits nicely */
+    z-index: 2; /* Overlaps on top */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .why-content-wrapper {
+      flex-direction: column;
+    }
+   
+    .left-content,
+    .right-images {
+      max-width: 100%;
+    }
+   
+    .right-images {
+      height: auto;
+      margin-top: 20px;
+    }
+   
+    .top-image,
+    .bottom-image {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  }
 
   
 /* Pricing Cards */
