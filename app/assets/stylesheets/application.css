@@ -292,13 +292,14 @@ h2 {
   text-align: justify;
 }
 
-span {
-  font-size: 2rem;
-  background-color: #F6F9FC;
-  color: var(--dark);
-  font-weight: 500;
-  padding: 0 5px;
+.highlight {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px var(--primary), 
+                  2px 2px 0px #607190, 
+                  3px 3px 0px black; 
 }
+
 
 .right-images {
   flex: 1;
