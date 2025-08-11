@@ -127,6 +127,12 @@ h1, h2, h3 {
   z-index: 1001;
 }
 
+/* Fallback hamburger icon if Font Awesome fails */
+.menu-toggle i:before {
+  content: "☰";
+  font-style: normal;
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -552,7 +558,6 @@ h2 {
   }
 
   .nav-links {
-    display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -562,13 +567,14 @@ h2 {
     padding: 1rem;
     border-radius: 0 0 8px 8px;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   }
 
   .nav-links.active {
-    display: flex;
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
   }
 
@@ -675,6 +681,7 @@ h2 {
     width: 100%;
     right: 0;
     border-radius: 0;
+    left: 0;
   }
 
   section {
@@ -750,5 +757,88 @@ h2 {
 
   .why-container {
     padding: 0 10px;
+  }
+}
+
+@media (max-width: 575px) { /* Mobile très petit - Section map améliorée */
+  .map-section {
+    padding: 2rem 1rem;
+  }
+
+  .map-container {
+    gap: 1.5rem;
+  }
+
+  .map-info {
+    gap: 1.5rem;
+  }
+
+  .contact-subsection {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+
+  .contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-icon i {
+    font-size: 2.5rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-text {
+    width: 100%;
+    text-align: center;
+    gap: 0.3rem;
+  }
+
+  .contact-text p {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .text-style-link.white {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+
+  .text-style-link.white:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--secondary);
+    transform: translateY(-1px);
+  }
+
+  .map-embed {
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .map-embed iframe {
+    border-radius: 12px;
   }
 }
